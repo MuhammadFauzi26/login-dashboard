@@ -1,0 +1,237 @@
+/*=============== GOOGLE FONTS ===============*/
+/* Mengimpor font dari Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+/* Variabel CSS untuk menyimpan warna, font, dan ukuran font */
+
+/*========== Colors ==========*/
+/* Mode warna HSL (hue, saturation, lightness) */
+:root {
+  --hover-bg-color: #0056b3; /* Warna latar belakang tombol saat hover */
+
+  --white-color: hsl(0, 0%, 100%); /* Warna putih */
+  --black-color: hsl(0, 0%, 0%);   /* Warna hitam */
+  
+  /*========== Font and typography ==========*/
+  /* Ukuran font dalam rem (1rem = 16px) */
+  --body-font: "Poppins", sans-serif; /* Font untuk body */
+  --h1-font-size: 1.75rem;            /* Ukuran font untuk h1 */
+  --normal-font-size: 1rem;           /* Ukuran font normal */
+  --small-font-size: .813rem;         /* Ukuran font kecil */
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;                 /* Berat font medium */
+}
+
+/*=============== BASE ===============*/
+/* Gaya dasar untuk elemen dasar */
+
+* {
+  box-sizing: border-box; /* Mengatur box-sizing untuk semua elemen */
+  padding: 0;
+  margin: 0;
+}
+
+body,
+input,
+button {
+  font-size: var(--normal-font-size); /* Mengatur ukuran font default */
+  font-family: var(--body-font);       /* Mengatur font default */
+}
+
+body {
+  color: var(--white-color); /* Warna teks default */
+}
+
+input,
+button {
+  border: none; /* Menghilangkan border default */
+  outline: none; /* Menghilangkan outline default */
+}
+
+a {
+  text-decoration: none; /* Menghilangkan garis bawah default pada link */
+}
+
+img {
+  max-width: 100%; /* Mengatur gambar agar responsif */
+  height: auto;
+}
+
+/*=============== LOGIN ===============*/
+/* Gaya khusus untuk halaman log in */
+
+.login {
+  position: relative;
+  height: 100vh; /* Tinggi penuh layar */
+  display: grid;
+  align-items: center; /* Menempatkan form di tengah */
+}
+
+.login__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Menyesuaikan gambar agar menutupi seluruh area */
+  object-position: center; /* Posisi gambar di tengah */
+}
+
+.login__form {
+  position: relative;
+  background-color: hsla(0, 0%, 10%, 0.1); /* Warna latar belakang semi-transparan */
+  border: 2px solid var(--white-color); /* Border putih */
+  margin-inline: 1.5rem; /* Margin horizontal */
+  padding: 2.5rem 1.5rem; /* Padding di sekitar form */
+  border-radius: 1rem; /* Radius sudut form */
+  backdrop-filter: blur(8px); /* Efek blur latar belakang */
+}
+
+.login__title {
+  text-align: center; /* Menempatkan judul di tengah */
+  font-size: var(--h1-font-size); /* Ukuran font judul */
+  font-weight: var(--font-medium); /* Berat font medium */
+  margin-bottom: 2rem; /* Margin bawah judul */
+}
+
+.login__content, .login__box {
+  display: grid; /* Menggunakan grid untuk layout */
+}
+
+.login__content {
+  row-gap: 1.75rem; /* Jarak antar baris */
+  margin-bottom: 1.5rem; /* Margin bawah konten */
+}
+
+.login__box {
+  grid-template-columns: max-content 1fr; /* Layout grid dengan kolom fleksibel */
+  align-items: center; /* Menempatkan item di tengah secara vertikal */
+  column-gap: 0.75rem; /* Jarak antar kolom */
+  border-bottom: 2px solid var(--white-color); /* Border bawah box */
+}
+
+.login__icon, .login__eye {
+  font-size: 1.25rem; /* Ukuran ikon */
+}
+
+.login__input {
+  width: 100%; /* Lebar penuh box */
+  padding-block: 0.8rem; /* Padding atas dan bawah input */
+  background: none; /* Menghilangkan latar belakang default */
+  color: var(--white-color); /* Warna teks input */
+  position: relative;
+  z-index: 1; /* Menempatkan input di atas elemen lainnya */
+}
+
+.login__box-input {
+  position: relative;
+}
+
+.login__label {
+  position: absolute; /* Label diposisikan secara absolut */
+  left: 0;
+  top: 13px; /* Posisi label */
+  font-weight: var(--font-medium); /* Berat font label */
+  transition: top 0.3s, font-size 0.3s; /* Transisi saat label bergerak */
+}
+
+.login__eye {
+  position: absolute;
+  right: 0;
+  top: 18px; /* Posisi ikon mata */
+  z-index: 10; /* Menempatkan ikon mata di atas */
+  cursor: pointer; /* Menampilkan kursor pointer saat hover */
+}
+
+.login__box:nth-child(2) input {
+  padding-right: 1.8rem; /* Padding kanan pada input kedua */
+}
+
+.login__check, .login__check-group {
+  display: flex; /* Menampilkan elemen dengan flexbox */
+  align-items: center; /* Menempatkan item di tengah secara vertikal */
+  justify-content: space-between; /* Spasi antar item */
+}
+
+.login__check {
+  margin-bottom: 1.5rem; /* Margin bawah pada kotak centang */
+}
+
+.login__check-label, .login__forgot, .login__register {
+  font-size: var(--small-font-size); /* Ukuran font kecil */
+}
+
+.login__check-group {
+  column-gap: 0.5rem; /* Jarak antar kolom dalam grup centang */
+}
+
+.login__check-input {
+  width: 16px; /* Lebar input centang */
+  height: 16px; /* Tinggi input centang */
+}
+
+.login__forgot {
+  color: var(--white-color); /* Warna teks lupa kata sandi */
+}
+
+.login__forgot:hover {
+  text-decoration: underline; /* Garis bawah saat hover */
+}
+
+.login__button {
+  width: 100%; /* Lebar penuh button */
+  padding: 1rem; /* Padding di sekitar button */
+  border-radius: 0.5rem; /* Radius sudut button */
+  background-color: var(--white-color); /* Warna latar belakang button */
+  font-weight: var(--font-medium); /* Berat font button */
+  cursor: pointer; /* Menampilkan kursor pointer saat hover */
+  margin-bottom: 2rem; /* Margin bawah button */
+}
+
+button:hover {
+  background-color: var(--hover-bg-color);
+}
+
+
+.login__register {
+  text-align: center; /* Menempatkan registrasi di tengah */
+}
+
+.login__register a {
+  color: var(--white-color); /* Warna link registrasi */
+  font-weight: var(--font-medium); /* Berat font link */
+}
+
+.login__register a:hover {
+  text-decoration: underline; /* Garis bawah saat hover */
+}
+
+/* Input focus move up label */
+/* Mengatur posisi label saat input difokuskan */
+.login__input:focus + .login__label {
+  top: -12px;
+  font-size: var(--small-font-size);
+}
+
+/* Input focus sticky top label */
+/* Menjaga posisi label di atas saat input tidak kosong */
+.login__input:not(:placeholder-shown).login__input:not(:focus) + .login__label {
+  top: -12px;
+  font-size: var(--small-font-size);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* Responsif untuk perangkat menengah ke atas */
+@media screen and (min-width: 576px) {
+  .login {
+    justify-content: center; /* Menempatkan form di tengah pada perangkat besar */
+  }
+  .login__form {
+    width: 432px; /* Lebar form pada perangkat besar */
+    padding: 4rem 3rem 3.5rem; /* Padding di sekitar form */
+    border-radius: 1.5rem; /* Radius sudut form pada perangkat besar */
+  }
+  .login__title {
+    font-size: 2rem; /* Ukuran font judul pada perangkat besar */
+  }
+}
